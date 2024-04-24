@@ -17,6 +17,7 @@ import {
 import HomeScreen from './HomeScreen';
 import AboutScreen from './AboutScreen';
 import ContactScreen from './ContactScreen';
+import ReservationScreen from './ReservationScreen';
 import { Icon } from 'react-native-elements';
 import logo from '../assets/images/logo.png';
 import { useDispatch } from 'react-redux';
@@ -32,8 +33,10 @@ const Drawer = createDrawerNavigator();
 
 const screenOptions = {
     headerTintColor: '#fff',
-    headerStyle: { backgroundColor: '#5637DD' }
+    headerStyle: { backgroundColor: '#5637DD'},
+    // headerTitleAlign: 'left'
 }
+
 
 const HomeNavigator = () => {
     const Stack = createStackNavigator();
@@ -48,7 +51,7 @@ const HomeNavigator = () => {
                         <Icon
                             name='home'
                             type='font-awesome'
-                            IconStyle={styles.stackIcon}
+                            iconStyle={styles.stackIcon}
                             onPress={() => navigation.toggleDrawer()}
                         />
                     )
@@ -71,7 +74,7 @@ const AboutNavigator = () => {
                         <Icon
                             name='info-circle'
                             type='font-awesome'
-                            IconStyle={styles.stackIcon}
+                            iconStyle={styles.stackIcon}
                             onPress={() => navigation.toggleDrawer()}
                         />
                     )
@@ -95,7 +98,7 @@ const ContactNavigator = () => {
                         <Icon
                             name='address-card'
                             type='font-awesome'
-                            IconStyle={styles.stackIcon}
+                            iconStyle={styles.stackIcon}
                             onPress={() => navigation.toggleDrawer()}
                         />
                     )
@@ -104,6 +107,32 @@ const ContactNavigator = () => {
         </Stack.Navigator>
     );
 };
+
+
+
+const ReservationNavigator = () => {
+    const Stack = createStackNavigator();
+    return (
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen
+                name='Reservation'
+                component={ReservationScreen}
+                options={({navigation}) => ({
+                    title: 'Reservation Search',
+                    headerLeft: () => (
+                        <Icon
+                            name='tree'
+                            type='font-awesome'
+                            iconStyle={styles.stackIcon}
+                            onPress={() => navigation.toggleDrawer()}
+                        />
+                    )
+                })}
+            />
+        </Stack.Navigator>
+    );
+};
+
 
 
 const DirectoryNavigator = () => {
@@ -122,7 +151,7 @@ const DirectoryNavigator = () => {
                         <Icon
                             name='list'
                             type='font-awesome'
-                            IconStyle={styles.stackIcon}
+                            iconStyle={styles.stackIcon}
                             onPress={() => navigation.toggleDrawer()}
                         />
                     )
@@ -200,6 +229,21 @@ const Main = () => {
                     drawerIcon: ({ color }) => (
                         <Icon
                             name='list'
+                            type='font-awesome'
+                            size={24}
+                            iconStyle={{ width: 24 }}
+                            color={color}
+                        />
+                    )
+                 }}
+                />
+                 <Drawer.Screen
+                    name='ReserveCampsiteNav'
+                    component={ReservationNavigator}
+                    options={{ title: 'Reserve Campsite',
+                    drawerIcon: ({ color }) => (
+                        <Icon
+                            name='tree'
                             type='font-awesome'
                             size={24}
                             iconStyle={{ width: 24 }}
