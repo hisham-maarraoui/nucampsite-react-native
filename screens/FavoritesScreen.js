@@ -6,7 +6,7 @@ import {
     TouchableOpacity,
     StyleSheet,
     Alert
-} from "react-native-animatable";
+} from "react-native";
 import { Avatar, ListItem } from "react-native-elements";
 import Loading from "../components/LoadingComponent";
 import { baseUrl } from "../shared/baseUrl";
