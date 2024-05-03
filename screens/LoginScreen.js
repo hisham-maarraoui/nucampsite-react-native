@@ -54,7 +54,7 @@ const LoginScreen = () => {
                 leftIcon={{ type: 'font-awesome', name: 'key' }}
                 onChangeText={(text) => setPassword(text)}
                 value={password}
-                containerStyle={style.formInput}
+                containerStyle={styles.formInput}
                 leftIconContainerStyle={styles.formIcon}
             />
             <CheckBox

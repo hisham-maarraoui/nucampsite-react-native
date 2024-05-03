@@ -27,7 +27,7 @@ import { fetchCampsites } from '../features/campsites/campsitesSlice';
 import { fetchPromotions } from '../features/promotions/promotionsSlice';
 import { fetchComments } from '../features/comments/commentsSlice';
 import FavoritesScreen from './FavoritesScreen';
-import { LoginScreen } from './LoginScreen';
+import LoginScreen from './LoginScreen';
 
 
 const Drawer = createDrawerNavigator();
@@ -255,7 +255,7 @@ const Main = () => {
                 screenOptions={{ drawerStyle: {backgroundColor: '#CEC8FF' }}}
             >
                 <Drawer.Screen
-                    name='LoginNav'
+                    name='Login '
                     component={LoginNavigator}
                     options={{
                         drawerIcon: ({ color }) => (
